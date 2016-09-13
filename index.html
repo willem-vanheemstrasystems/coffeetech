@@ -4,11 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
   </head>
-  <body ng-app>
-    <div class="container">
-      {{'Welcome to CoffeeTech'}}
+  <body ng-app="coffeetech">
+    <div class="container" ng-controller="GithubCtrl">
+      {{ repo }}
     </div>
     <script src="js/angular.js"></script>
     <script src="js/github.js"></script>
+    <script src="js/coffeetech.js"></script>
   </body>
 </html>
