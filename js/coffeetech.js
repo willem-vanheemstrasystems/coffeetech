@@ -5,12 +5,14 @@ var mod = angular.module( 'coffeetech', []);
 mod.controller( 'GithubCtrl', function( $scope ) {
   
   // token auth
-  var gh = new GitHub({
-    token: 'MY_OAUTH_TOKEN'
-  });
+  //var gh = new GitHub({
+  //  token: 'MY_OAUTH_TOKEN'
+  //});
 
-  var vhs = gh.getOrganization('vanheemstrasystems');
-    vhs.getRepos(function(err, repos) {
+  var gh = new GitHub({});
+
+  var yahoo = gh.getOrganization('yahoo');
+    yahoo.getRepos(function(err, repos) {
      // look at all the repos!
      $scope.repo = repos;
      $scope.$apply();
