@@ -7,9 +7,7 @@ mod.controller( 'GithubCtrl', function( $scope ) {
   // token auth
   var gh = new GitHub({
     token: 'MY_OAUTH_TOKEN'
-  });
-
-  //var gh = new GitHub({});
+  });
 
   var yahoo = gh.getOrganization('yahoo');
     yahoo.getRepos(function(err, repos) {
