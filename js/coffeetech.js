@@ -9,8 +9,8 @@ mod.controller( 'GithubCtrl', function( $scope ) {
     token: 'MY_OAUTH_TOKEN'
   });
 
-  var gollum = gh.getOrganization('gollum');
-    gollum.getRepos(function(err, repos) {
+  var wvhs = gh.getOrganization('willem-vanheemstrasystems');
+    wvhs.getRepos(function(err, repos) {
      // look at all the repos!
      $scope.repo = repos;
      $scope.$apply();
