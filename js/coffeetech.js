@@ -10,10 +10,10 @@ mod.controller( 'GithubCtrl', function( $scope ) {
   });
 
   var yahoo = gh.getOrganization('yahoo');
-    yahoo.getRepos(function(err, repos) {
-     // look at all the repos!
-     $scope.repo = repos;
-     $scope.$apply();
+  yahoo.getRepos(function(err, repos) {
+    // look at all the repos!
+    $scope.repo = repos;
+    $scope.$apply();
   });
   
   //var github = new GitHub({});
