@@ -6,6 +6,10 @@ mod.controller( 'GithubCtrl', function( $scope ) {
   //var github = new GitHub({});
   var github = new GitHub({ token:'MY_OAUTH_TOKEN' });
   var repo = github.getRepo( "gollum", "gollum" );
+  
+  console.log("+++++++++++++++++++ repo:");
+  console.log(repo);
+  
   repo.show(function(err, repo) {
     $scope.repo = repo;
     $scope.$apply();
