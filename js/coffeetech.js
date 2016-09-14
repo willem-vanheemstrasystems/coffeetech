@@ -1,6 +1,6 @@
-var GitHub = require('/github.js');
+//var GitHub = require('/github.js');
 
-var mod = angular.module( 'coffeetech', [])
+var mod = angular.module( 'coffeetech', []);
 
 mod.controller( 'GithubCtrl', function( $scope ) {
   var github = new GitHub({});
