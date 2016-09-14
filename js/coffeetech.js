@@ -12,7 +12,7 @@ mod.controller( 'GithubCtrl', function( $scope ) {
   var yahoo = gh.getOrganization('yahoo');
     yahoo.getRepos(function(err, repos) {
      // look at all the repos!
-     $scope.yahoo = yahoo;
+     $scope.repo = repos;
      $scope.$apply();
   });
   
