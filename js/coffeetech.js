@@ -1,3 +1,5 @@
+var GitHub = require('/github.js');
+
 var mod = angular.module( 'coffeetech', [])
 
 mod.controller( 'GithubCtrl', function( $scope ) {
