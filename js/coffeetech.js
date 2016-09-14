@@ -3,8 +3,8 @@
 var mod = angular.module( 'coffeetech', []);
 
 mod.controller( 'GithubCtrl', function( $scope ) {
-  var github = new GitHub({});
-  //var github = new GitHub({ token:'MY_OAUTH_TOKEN' });
+  //var github = new GitHub({});
+  var github = new GitHub({ token:'MY_OAUTH_TOKEN' });
   var repo = github.getRepo( "gollum", "gollum" );
   
   console.log("+++++++++++++++++++ repo:");
