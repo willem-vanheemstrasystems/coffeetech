@@ -1,16 +1,67 @@
 <html>
-  <head>
-    <title>CoffeeTech</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
-  </head>
-  <body ng-app="coffeetech">
-    <div class="container" ng-controller="GithubCtrl">
-      {{ repo }}
+
+<head>
+  <title>CoffeeTech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
+  <style>
+    .ctinput {
+      width: 20em;
+    }
+  </style>
+</head>
+
+<body ng-app="coffeetech">
+  <div class="container" ng-controller="GithubCtrl" ng-init="init()">
+
+    <h1>CoffeeTe.ch</h1>
+
+    <input class="ctinput" ng-model="search" placeholder="Enter search parameters..." />
+    <!--1-->
+
+    <h3 ng-show="city">Current city: {{city.name}}</h3>
+
+    <div ng-show="waiting">
+      {{waiting.msg}}
     </div>
-    <script src="js/angular.js"></script>
-    <script src="js/github.js"></script>
-    <!--<script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>-->
-    <script src="js/coffeetech.js"></script>
-  </body>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Shop Name</h4>
+      </div>
+      <div class="col-md-6">
+        <h4>Map Link</h4>
+      </div>
+    </div>
+    <div class="row" ng-repeat="shop in shops | filter:search">
+      <!--2-->
+      <div class="col-md-6">
+        {{ shop.name }}
+
+        <div ng-show="search">
+          <!--3-->
+          <span ng-repeat="info in shop.information">
+<span class="label label-default">{{info}}</span>
+          </span>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <a target="_map" href="http://maps.google.com/?q={{shop.latitude}},{{shop.longitude}}">Open in map ({{shop.latitude}},{{shop.longitude}})</a>
+        <button ng-click="annotate(shop)">Add factoid</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/angular.js"></script>
+  <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+  <script src='https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js'></script>
+  <script src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'></script>
+  <script src="js/underscore-min.js"></script>
+  <script src="js/base64.js"></script>
+  <script src="js/github.js"></script>
+  <!--<script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>-->
+  <script src="js/coffeetech.js"></script>
+</body>
+
 </html>
