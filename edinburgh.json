@@ -5,13 +5,13 @@
          "free wifi",
          "accepts dogs"
       ],
-      "longitude" : 55.9533,
-      "latitude" : -3.1883,
-      "name" : "Very Good Coffee Shop"
+      "name" : "Very Good Coffee Shop",
+      "latitude" : 55.9533,
+      "longitude" : -3.1883
    },
    {
+      "name" : "Very Bad Coffee Shop",   
       "latitude" : 55.9543,
-      "name" : "Very Bad Coffee Shop",
       "longitude" : -3.1893
    },
    {
