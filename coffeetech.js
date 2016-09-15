@@ -23,7 +23,8 @@ mod.controller( 'GithubCtrl', [ '$scope', 'Github', 'Geo', '$window', '$timeout'
             $scope.latitude = position.coords.latitude;
             $scope.longitude = position.coords.longitude;
             var gh = ghs.create();
-            $scope.repo = gh.getRepo( "xrd", "spa.coffeete.ch" ); 
+            //ORIGINAL $scope.repo = gh.getRepo( "xrd", "spa.coffeete.ch" ); 
+            $scope.repo = gh.getRepo( "willem-vanheemstrasystems", "coffeetech" );
             $scope.repo.read( "gh-pages", "cities.json", function(err, data) { 
                 $scope.cities = JSON.parse( data ); 
                 // Determine our current city
