@@ -1,22 +1,26 @@
 [
-   {
-      "information" : [
-         "offers gluten free desserts",
-         "free wifi",
-         "accepts dogs"
-      ],
-      "name" : "Very Good Coffee Shop",
-      "latitude" : 55.9533,
-      "longitude" : -3.1883
-   },
-   {
-      "name" : "Very Bad Coffee Shop",   
-      "latitude" : 55.9543,
-      "longitude" : -3.1893
-   },
-   {
-      "name" : "Mediocre Coffee Shop",
-      "latitude" : 55.9538,
-      "longitude" : -3.1890
-   }
+	{
+		"information": 
+		[
+			"offers gluten free desserts",
+			"free wifi",
+			"accepts dogs"
+		],
+
+		"name": "Very Good Coffee Shop",
+		"latitude": 55.9533,
+		"longitude": -3.1883
+	},
+
+	{
+		"name": "Very Bad Coffee Shop",
+		"latitude": 55.9543,
+		"longitude": -3.1893
+	},
+
+	{
+		"name": "Mediocre Coffee Shop",
+		"latitude": 55.9538,
+		"longitude": -3.1890
+	}
 ]
