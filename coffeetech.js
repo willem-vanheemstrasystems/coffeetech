@@ -109,7 +109,8 @@ mod.controller( 'GithubCtrl', [ '$scope', 'Github', 'Geo', '$window', '$timeout'
 
             if( $scope.annotation ) {
                 gh = ghs.create( $scope.me.accessToken ); // <3>
-                toFork = gh.getRepo( "xrd", "spa.coffeete.ch" );
+                //ORIGINAL toFork = gh.getRepo( "xrd", "spa.coffeete.ch" );
+                toFork = gh.getRepo( "willem-vanheemstrasystems", "coffeetech" );
                 toFork.fork( function( err ) {
                     if( !err ) {
                         $scope.notifyWaiting( "forking", "Forking in progress on GitHub, please wait" );
@@ -125,7 +126,8 @@ mod.controller( 'GithubCtrl', [ '$scope', 'Github', 'Geo', '$window', '$timeout'
 
 
     $scope.annotateAfterForkCompletes = function() {
-        $scope.forkedRepo = gh.getRepo( $scope.username, "spa.coffeete.ch" ); 
+        //ORIGINAL $scope.forkedRepo = gh.getRepo( $scope.username, "spa.coffeete.ch" );
+        $scope.forkedRepo = gh.getRepo( $scope.username, "coffeetech" );
         $scope.forkedRepo.read( "gh-pages", "cities.json", function(err, data) { 
             if( err ) {
                 $timeout( $scope.annotateAfterForkCompletes, 10000 );
@@ -146,7 +148,8 @@ mod.controller( 'GithubCtrl', [ '$scope', 'Github', 'Geo', '$window', '$timeout'
                             base: "gh-pages",
                             head: $scope.username + ":" + "gh-pages"
                         };
-                        target = gh.getRepo( "xrd", "spa.coffeete.ch" ); // <6>
+                        //ORIGINAL target = gh.getRepo( "xrd", "spa.coffeete.ch" ); // <6>
+                        target = gh.getRepo( "willem-vanheemstrasystems", "coffeetech" ); // <6>
                         target.createPullRequest( pull, function( err, pullRequest ) {
                             if( !err ) { // <7>
                                 $scope.notifyWaiting( "annotated", "Successfully sent annotation request" );
