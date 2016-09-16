@@ -17,7 +17,8 @@ mod.controller( 'GithubCtrl', [ '$scope', 'Github', 'Geo', '$window', '$timeout'
     $scope.init = function() {
         
         //ORIGINAL var ref = new Firebase( 'https://coffeetech.firebaseio.com' );
-        var ref = new Firebase( 'https://coffeetech-6594d.firebaseapp.com/__/auth/handler' );
+        //var ref = new Firebase( 'https://coffeetech-6594d.firebaseapp.com/__/auth/handler' );
+        var ref = new Firebase( 'https://coffeetech-6594d.firebaseapp.com' );
         $scope.auth = $firebaseSimpleLogin( ref );
         
         $scope.getCurrentLocation( function( position ) {
